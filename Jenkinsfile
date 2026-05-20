@@ -2,7 +2,8 @@ pipeline {
     agent any
     
     tools {
-        sonarRunner 'sonar-scanner-tool' 
+        // Điền chính xác Class định danh thu được từ log lỗi
+        'hudson.plugins.sonar.SonarRunnerInstallation' 'sonar-scanner-tool' 
     }
     
     environment {
