@@ -2,8 +2,7 @@ pipeline {
     agent any
     
     tools {
-        // Cú pháp chuẩn theo cấu hình hệ thống hiện tại của bạn
-        'sonar-scanner' 'sonar-scanner-tool' 
+        sonarRunner 'sonar-scanner-tool' 
     }
     
     environment {
@@ -13,7 +12,6 @@ pipeline {
     stages {
         stage('Checkout Source Code') {
             steps {
-                // Tải code từ kho hiện tại
                 git branch: 'master', url: 'https://github.com/lewis09z/Jenkinsfile'
             }
         }
